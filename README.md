@@ -18,7 +18,7 @@ O projeto utiliza a tecnologia como ferramenta de transformação para abordar t
 3. Alinhar o aprendizado escolar com as diretrizes do Programa Agrinho.
 
 ## 👥 Integrantes e Orientação
-* **Aluno(s):** Seu Nome / Nomes da Equipe
-* **Professor(a) Orientador(a):** Nome do Professor
-* **Escola:** Nome da Sua Instituição de Ensino
+* **Aluno:** Otavio Uhren Camargo
+* **Professor(a):** Paulo
+* **Escola:** Colégio Estaual José Siqueira Rosas
 * **Ano:** 2026
