@@ -3,81 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Estufa - Agrinho 2026</title>
+    <title>Simulador de Estufa Inteligente - Agrinho 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>🌱 Projeto Alface Sustentável</h1>
-        <nav aria-label="Navegação principal">
-            <button class="nav-btn active" onclick="mudarPagina('simulador', this)">Simulador</button>
-            <button class="nav-btn" onclick="mudarPagina('sobre-mim', this)">Sobre Mim</button>
-            <button class="nav-btn" onclick="mudarPagina('sobre-agrinho', this)">Sobre o Agrinho</button>
-        </nav>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <i class="fa-solid fa-leaf text-gradient"></i>
+                <h1>Projeto Alface Sustentável</h1>
+            </div>
+            <p class="subtitle">Tecnologia e Agricultura de Precisão para o Futuro</p>
+            <nav aria-label="Navegação principal da página">
+                <button class="nav-btn active" onclick="mudarPagina('simulador', this)">
+                    <i class="fa-solid fa-sliders"></i> Simulador
+                </button>
+                <button class="nav-btn" onclick="mudarPagina('sobre-mim', this)">
+                    <i class="fa-solid fa-user"></i> Sobre Mim
+                </button>
+                <button class="nav-btn" onclick="mudarPagina('sobre-agrinho', this)">
+                    <i class="fa-solid fa-award"></i> Sobre o Agrinho
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="simulador" class="pagina ativa">
-            <h2>Simulador de Estufa de Alface</h2>
-            <p>Ajuste os parâmetros abaixo para encontrar o equilíbrio ideal entre a produtividade e a economia de recursos.</p>
-            
-            <div class="controles">
-                <div class="controle">
-                    <label for="temperatura">
-                        <span>Temperatura:</span> 
-                        <strong><span id="valor-temp">20</span>°C</strong>
-                    </label>
-                    <input type="range" id="temperatura" min="5" max="40" value="20" oninput="atualizarSimulador()">
-                </div>
-
-                <div class="controle">
-                    <label for="umidade-ar">
-                        <span>Umidade do Ar:</span> 
-                        <strong><span id="valor-ar">70</span>%</strong>
-                    </label>
-                    <input type="range" id="umidade-ar" min="10" max="100" value="70" oninput="atualizarSimulador()">
-                </div>
-
-                <div class="controle">
-                    <label for="umidade-solo">
-                        <span>Umidade do Solo:</span> 
-                        <strong><span id="valor-solo">70</span>%</strong>
-                    </label>
-                    <input type="range" id="umidade-solo" min="10" max="100" value="70" oninput="atualizarSimulador()">
-                </div>
+    <main class="content-wrapper">
+        
+        <section id="simulador" class="pagina ativa" aria-live="polite">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-microchip"></i> Centro de Controle Automatizado</h2>
+                <p>Manipule as variáveis ambientais abaixo para calibrar o ecossistema da estufa e entender o impacto direto na produção e no meio ambiente.</p>
             </div>
+            
+            <div class="grid-simulador">
+                <div class="card card-controles">
+                    <h3><i class="fa-solid fa-gears"></i> Parâmetros dos Sensores</h3>
+                    
+                    <div class="controles-lista">
+                        <div class="controle-group">
+                            <label for="temperatura">
+                                <span><i class="fa-solid fa-temperature-half"></i> Temperatura</span>
+                                <span class="badge-valor"><span id="valor-temp">20</span>°C</span>
+                            </label>
+                            <input type="range" id="temperatura" min="5" max="40" value="20" oninput="atualizarSimulador()">
+                        </div>
 
-            <div class="resultado">
-                <h3>Status da Plantação:</h3>
-                <div id="status-planta" class="status-bom">
-                    🔄 Conectando aos sensores e lendo dados...
+                        <div class="controle-group">
+                            <label for="umidade-ar">
+                                <span><i class="fa-solid fa-cloud-sun-rain"></i> Umidade do Ar</span>
+                                <span class="badge-valor"><span id="valor-ar">70</span>%</span>
+                            </label>
+                            <input type="range" id="umidade-ar" min="10" max="100" value="70" oninput="atualizarSimulador()">
+                        </div>
+
+                        <div class="controle-group">
+                            <label for="umidade-solo">
+                                <span><i class="fa-solid fa-faucet-drip"></i> Umidade do Solo</span>
+                                <span class="badge-valor"><span id="valor-solo">70</span>%</span>
+                            </label>
+                            <input type="range" id="umidade-solo" min="10" max="100" value="70" oninput="atualizarSimulador()">
+                        </div>
+                    </div>
                 </div>
-                <p id="dica-sustentavel"><strong>Dica Sustentável:</strong> Carregando recomendações ecológicas...</p>
+
+                <div class="card card-resultado">
+                    <h3><i class="fa-solid fa-chart-line"></i> Diagnóstico e Impacto Ecofinanceiro</h3>
+                    
+                    <div id="status-container" class="status-box status-carregando">
+                        <div class="status-header">
+                            <i id="status-icone" class="fa-solid fa-circle-notch fa-spin"></i>
+                            <h4 id="status-titulo">Lendo dados dos sensores...</h4>
+                        </div>
+                        <p id="status-planta">Aguardando telemetria inicial do sistema automatizado...</p>
+                    </div>
+
+                    <div class="dica-box">
+                        <h5><i class="fa-solid fa-lightbulb"></i> Diretriz Sustentável</h5>
+                        <p id="dica-sustentavel">Carregando recomendações ecológicas com base nos níveis atuais...</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="sobre-mim" class="pagina">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Sou estudante do 3º ano do Ensino Médio.</p>
-            <p>Desenvolvi este simulador focado na urgência de alinhar o avanço tecnológico com a preservação ambiental. Acredito que o futuro do agronegócio depende de soluções digitais que ajudem o produtor rural a tomar decisões mais rápidas, inteligentes e sustentáveis.</p>
-            <p>Através da programação, busco criar ferramentas práticas que demonstrem como a agricultura de precisão pode evitar o desperdício de água e insumos, protegendo o ecossistema.</p>
+            <div class="card bio-card">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Trajetória e Propósito</h2>
+                <p>Olá! Sou estudante do 3º ano do Ensino Médio.</p>
+                <p>Desenvolvi este software guiado pela convicção de que o avanço tecnológico deve ser o maior aliado da conservação ecológica. A agricultura de precisão não é apenas uma ferramenta de lucro, mas sim a chave para garantir a segurança alimentar das próximas gerações sem esgotar os recursos hídricos e térmicos do planeta.</p>
+                <p>Através do código, busco traduzir conceitos complexos da agronomia em uma interface simples, provando que pequenos ajustes digitais reduzem significativamente a pegada de carbono e o desperdício de insumos no campo.</p>
+            </div>
         </section>
 
         <section id="sobre-agrinho" class="pagina">
-            <h2>Sobre o Concurso Agrinho 2026</h2>
-            <p><strong>Tema Central:</strong> "Agro forte, futuro sustentável: equilibrando entre produção e meio ambiente".</p>
-            <p>O Programa Agrinho desempenha um papel fundamental ao incentivar o protagonismo jovem na busca por soluções sociais e ecológicas. Este projeto reflete esse compromisso, aplicando a tecnologia web para aproximar a ciência do campo.</p>
-            
-            <div class="imagem-container">
-                <img src="agrinho-logo.jpg" alt="Logotipo Oficial do Concurso Agrinho 2026" class="imagem-agrinho">
-                <p class="legenda-imagem"><em>(Certifique-se de manter a imagem do concurso como 'agrinho-logo.jpg' na mesma pasta do projeto)</em></p>
+            <div class="card agrinho-card">
+                <h2><i class="fa-solid fa-earth-americas"></i> O Concurso Agrinho 2026</h2>
+                <p class="destaque-tema"><strong>Tema Central:</strong> "Agro forte, futuro sustentável: equilibrando entre produção e meio ambiente".</p>
+                <p>O Programa Agrinho cumpre o papel essencial de despertar o protagonismo cidadão nas escolas. Este simulador responde diretamente ao desafio do tema de 2026, utilizando a tecnologia Web nativa para desenhar um cenário onde a produtividade agrícola cresce em perfeita harmonia com o respeito rigoroso à natureza.</p>
+                
+                <div class="imagem-galeria">
+                    <img src="agrinho-logo.jpg" alt="Logotipo Oficial do Concurso Agrinho 2026" class="img-fluida">
+                    <p class="legenda"><i class="fa-solid fa-info-circle"></i> Certifique-se de salvar o logotipo oficial como <code>agrinho-logo.jpg</code> no mesmo diretório deste arquivo.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2026 — Projeto desenvolvido para o Concurso Agrinho</p>
+    <footer class="main-footer">
+        <p>Solução Digital Desenvolvida para o Concurso Agrinho 2026</p>
+        <p class="footer-sub">Ensino Médio • Tecnologia & Sustentabilidade</p>
     </footer>
 
     <script src="script.js"></script>
