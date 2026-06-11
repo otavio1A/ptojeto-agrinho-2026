@@ -10,7 +10,7 @@
 
     <header>
         <h1>🌱 Projeto Alface Sustentável</h1>
-        <nav>
+        <nav aria-label="Navegação principal">
             <button class="nav-btn active" onclick="mudarPagina('simulador', this)">Simulador</button>
             <button class="nav-btn" onclick="mudarPagina('sobre-mim', this)">Sobre Mim</button>
             <button class="nav-btn" onclick="mudarPagina('sobre-agrinho', this)">Sobre o Agrinho</button>
@@ -20,21 +20,30 @@
     <main>
         <section id="simulador" class="pagina ativa">
             <h2>Simulador de Estufa de Alface</h2>
-            <p>Ajuste os parâmetros abaixo para encontrar o equilíbrio ideal para a produção de alface e a economia de recursos.</p>
+            <p>Ajuste os parâmetros abaixo para encontrar o equilíbrio ideal entre a produtividade e a economia de recursos.</p>
             
             <div class="controles">
                 <div class="controle">
-                    <label for="temperatura">Temperatura: <span id="valor-temp">20</span>°C</label>
+                    <label for="temperatura">
+                        <span>Temperatura:</span> 
+                        <strong><span id="valor-temp">20</span>°C</strong>
+                    </label>
                     <input type="range" id="temperatura" min="5" max="40" value="20" oninput="atualizarSimulador()">
                 </div>
 
                 <div class="controle">
-                    <label for="umidade-ar">Umidade do Ar: <span id="valor-ar">70</span>%</label>
+                    <label for="umidade-ar">
+                        <span>Umidade do Ar:</span> 
+                        <strong><span id="valor-ar">70</span>%</strong>
+                    </label>
                     <input type="range" id="umidade-ar" min="10" max="100" value="70" oninput="atualizarSimulador()">
                 </div>
 
                 <div class="controle">
-                    <label for="umidade-solo">Umidade do Solo: <span id="valor-solo">70</span>%</label>
+                    <label for="umidade-solo">
+                        <span>Umidade do Solo:</span> 
+                        <strong><span id="valor-solo">70</span>%</strong>
+                    </label>
                     <input type="range" id="umidade-solo" min="10" max="100" value="70" oninput="atualizarSimulador()">
                 </div>
             </div>
@@ -42,33 +51,33 @@
             <div class="resultado">
                 <h3>Status da Plantação:</h3>
                 <div id="status-planta" class="status-bom">
-                    🌿 Analisando sensores da estufa...
+                    🔄 Conectando aos sensores e lendo dados...
                 </div>
-                <p id="dica-sustentavel"><strong>Dica Sustentável:</strong> Carregando informações...</p>
+                <p id="dica-sustentavel"><strong>Dica Sustentável:</strong> Carregando recomendações ecológicas...</p>
             </div>
         </section>
 
         <section id="sobre-mim" class="pagina">
             <h2>Sobre Mim</h2>
-            <p>Olá! Sou aluno(a) do 3º ano do Ensino Médio.</p>
-            <p>Criei este projeto porque acredito que a tecnologia e a agricultura devem andar juntas para garantir o sustento das próximas gerações sem esgotar os recursos do nosso planeta.</p>
-            <p>Através da programação, busco criar soluções que ajudem o produtor rural a tomar decisões mais inteligentes e ecológicas.</p>
+            <p>Olá! Sou estudante do 3º ano do Ensino Médio.</p>
+            <p>Desenvolvi este simulador focado na urgência de alinhar o avanço tecnológico com a preservação ambiental. Acredito que o futuro do agronegócio depende de soluções digitais que ajudem o produtor rural a tomar decisões mais rápidas, inteligentes e sustentáveis.</p>
+            <p>Através da programação, busco criar ferramentas práticas que demonstrem como a agricultura de precisão pode evitar o desperdício de água e insumos, protegendo o ecossistema.</p>
         </section>
 
         <section id="sobre-agrinho" class="pagina">
             <h2>Sobre o Concurso Agrinho 2026</h2>
-            <p><strong>Tema:</strong> "Agro forte, futuro sustentável: equilibrando entre produção e meio ambiente".</p>
-            <p>O Programa Agrinho visa despertar a consciência cidadã em crianças e jovens, integrando temas de relevância social e ambiental.</p>
+            <p><strong>Tema Central:</strong> "Agro forte, futuro sustentável: equilibrando entre produção e meio ambiente".</p>
+            <p>O Programa Agrinho desempenha um papel fundamental ao incentivar o protagonismo jovem na busca por soluções sociais e ecológicas. Este projeto reflete esse compromisso, aplicando a tecnologia web para aproximar a ciência do campo.</p>
             
             <div class="imagem-container">
-                <img src="agrinho-logo.jpg" alt="Logo do Concurso Agrinho" class="imagem-agrinho">
-                <p><em>(Coloque a imagem do concurso na mesma pasta com o nome agrinho-logo.jpg)</em></p>
+                <img src="agrinho-logo.jpg" alt="Logotipo Oficial do Concurso Agrinho 2026" class="imagem-agrinho">
+                <p class="legenda-imagem"><em>(Certifique-se de manter a imagem do concurso como 'agrinho-logo.jpg' na mesma pasta do projeto)</em></p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Projeto desenvolvido para o Concurso Agrinho 2026</p>
+        <p>© 2026 — Projeto desenvolvido para o Concurso Agrinho</p>
     </footer>
 
     <script src="script.js"></script>
