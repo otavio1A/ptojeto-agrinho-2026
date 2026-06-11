@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Estufa - Agrinho 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 Projeto Alface Sustentável</h1>
+        <nav>
+            <button class="nav-btn active" onclick="mudarPagina('simulador', this)">Simulador</button>
+            <button class="nav-btn" onclick="mudarPagina('sobre-mim', this)">Sobre Mim</button>
+            <button class="nav-btn" onclick="mudarPagina('sobre-agrinho', this)">Sobre o Agrinho</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="simulador" class="pagina ativa">
+            <h2>Simulador de Estufa de Alface</h2>
+            <p>Ajuste os parâmetros abaixo para encontrar o equilíbrio ideal para a produção de alface e a economia de recursos.</p>
+            
+            <div class="controles">
+                <div class="controle">
+                    <label for="temperatura">Temperatura: <span id="valor-temp">20</span>°C</label>
+                    <input type="range" id="temperatura" min="5" max="40" value="20" oninput="atualizarSimulador()">
+                </div>
+
+                <div class="controle">
+                    <label for="umidade-ar">Umidade do Ar: <span id="valor-ar">70</span>%</label>
+                    <input type="range" id="umidade-ar" min="10" max="100" value="70" oninput="atualizarSimulador()">
+                </div>
+
+                <div class="controle">
+                    <label for="umidade-solo">Umidade do Solo: <span id="valor-solo">70</span>%</label>
+                    <input type="range" id="umidade-solo" min="10" max="100" value="70" oninput="atualizarSimulador()">
+                </div>
+            </div>
+
+            <div class="resultado">
+                <h3>Status da Plantação:</h3>
+                <div id="status-planta" class="status-bom">
+                    🌿 Condições ideais! A alface está crescendo forte e saudável.
+                </div>
+                <p id="dica-sustentavel"><strong>Dica Sustentável:</strong> Manter a umidade e temperatura ideais evita o desperdício de água na irrigação e garante alta produtividade.</p>
+            </div>
+        </section>
+
+        <section id="sobre-mim" class="pagina">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou aluno(a) do 3º ano do Ensino Médio.</p>
+            <p>Criei este projeto porque acredito que a tecnologia e a agricultura devem andar juntas para garantir o sustento das próximas gerações sem esgotar os recursos do nosso planeta.</p>
+            <p>Através da programação, busco criar soluções que ajudem o produtor rural a tomar decisões mais inteligentes e ecológicas.</p>
+        </section>
+
+        <section id="sobre-agrinho" class="pagina">
+            <h2>Sobre o Concurso Agrinho 2026</h2>
+            <p><strong>Tema:</strong> "Agro forte, futuro sustentável: equilibrando entre produção e meio ambiente".</p>
+            <p>O Programa Agrinho visa despertar a consciência cidadã em crianças e jovens, integrando temas de relevância social e ambiental.</p>
+            
+            <div class="imagem-container">
+                <img src="agrinho-logo.jpg" alt="Logo do Concurso Agrinho" class="imagem-agrinho">
+                <p><em>(Coloque a imagem do concurso na mesma pasta com o nome agrinho-logo.jpg)</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto desenvolvido para o Concurso Agrinho 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
